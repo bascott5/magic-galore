@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/admin.css">
+    <script defer src="scripts/alpine.min.js"></script>
+    <script defer src="scripts/htmx.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Magic Galore - Admin Products</title>
+</head>
+<body>
+    <nav>
+        <a href="/https-bascott5.github.io-shop"><img class="logo" src="assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/https-bascott5.github.io-shop/admin-products.html">Products</a>
+            <a href="/https-bascott5.github.io-shop/admin-upload.html">Upload</a>
+        </div>
+    </nav>
+    <main class="admin-products">
+        <form class="admin-search-container" action="search" method="GET">
+            <input type="text">
+            <button type="submit">Search</button>
+        </form>
+        <section x-data="products">
+            <table class="products-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Category ID</th>
+                    <th>Image Path</th>
+                    <th>Price</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Breakthrough</td>
+                    <td>Draw four cards, then choose X cards in your hand and discard the rest. </td>
+                    <td>2X2</td>
+                    <td>assets/breakthrough.jpg</td>
+                    <td>$0.99</td>
+                    <td><a href="/admin-edit.html"><button>Edit</button></a></td>
+                    <td><a href=""><button>Delete</button></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Vessel of Ephemera</td>
+                    <td>Put two 1/1 white Spirit creature tokens with flying onto the battlefield.</td>
+                    <td>SOI</td>
+                    <td>assets/vessel-of-ephemera.jpg</td>
+                    <td>$0.99</td>
+                    <td><a href=""><button>Edit</button></a></td>
+                    <td><a href=""><button>Delete</button></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Benthic Biomancer</td>
+                    <td>Put two 1/1 white Spirit creature tokens with flying onto the battlefield.</td>
+                    <td>RNA</td>
+                    <td>assets/benthic-biomancer.jpg</td>
+                    <td>$0.99</td>
+                    <td><a href=""><button>Edit</button></a></td>
+                    <td><a href=""><button>Delete</button></a></td>
+                </tr>
+            </table>
+            <button x-bind="addRow">+Add Item</button>
+        </section>
+    </main>
+</body>
+</html>

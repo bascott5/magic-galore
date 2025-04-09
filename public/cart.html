@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cart.css">
+    <script defer src="scripts/alpine.min.js"></script>
+    <script defer src="scripts/htmx.min.js"></script>
+    <script src="scripts/cart.js"></script>
+    <title>Magic Galore - Cart</title>
+</head>
+<body>
+    <nav>
+        <a href="/https-bascott5.github.io-shop"><img class="logo" src="assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/">Precons</a>
+            <a href="/https-bascott5.github.io-shop/cart.html">Cart</a>
+            <a href="/">Login</a>
+        </div>
+    </nav>
+    <main>
+        <section x-data="cart" class="items-container">
+            <table>
+                <tr>
+                    <td class="delete"><img src="assets/delete.png" alt="Delete"></td>
+                    <td class="qty"><input type="number" min="1" value="2">x</td>
+                    <td class="card"><img src="assets/breakthrough.jpg" alt="Card"></td>
+                    <td class="name">Breakthrough</td>
+                    <td class="price">$0.99</td>
+                </tr>
+                <tr>
+                    <td class="delete"><img src="assets/delete.png" alt="Delete"></td>
+                    <td class="qty"><input type="number" min="1" value="1">x</td>
+                    <td class="card"><img src="assets/vessel-of-ephemera.jpg" alt="Card"></td>
+                    <td class="name">Vessel of Ephemera</td>
+                    <td class="price">$0.99</td>
+                </tr>
+                <tr>
+                    <td class="delete"><img src="assets/delete.png" alt="Delete"></td>
+                    <td class="qty"><input type="number" min="1" value="1">x</td>
+                    <td class="card"><img src="assets/benthic-biomancer.jpg" alt="Card"></td>
+                    <td class="name">Benthic Biomancer</td>
+                    <td class="price">$0.99</td>
+                </tr>
+            </table>
+        </section>
+        <section class="checkout-container">
+            <div>
+                <h1>Total:</h1>
+                <h1 class="total">$2.97</h1>
+            </div>
+            <button>Checkout</button>
+        </section>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

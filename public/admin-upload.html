@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/admin.css">
+    <script defer src="scripts/alpine.min.js"></script>
+    <script defer src="scripts/htmx.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Magic Galore - Admin Upload</title>
+</head>
+<body>
+    <nav>
+        <a href="/https-bascott5.github.io-shop"><img class="logo" src="assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/https-bascott5.github.io-shop/admin-products.html">Products</a>
+            <a href="/https-bascott5.github.io-shop/admin-upload.html">Upload</a>
+        </div>
+    </nav>
+    <main class="admin-upload">
+        <form action="upload-products" method="POST" x-data="upload">
+            <div class="file-upload">
+                <label for="json">Upload a .json file...</label>
+                <input type="file" name="json" id="json" accept=".json" x-bind="fileChange">
+            </div>
+            <template x-for="(jsonFile, index) in jsonFiles">
+                <section class="json-container">
+                    <div :id="index" x-bind="clickFile">
+                        <p x-text="jsonFile.name"></p>
+                    </div>
+                </section>
+            </template>
+            <button type="submit" class="upload-submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
