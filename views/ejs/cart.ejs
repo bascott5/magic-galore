@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/cart.css">
+    <script defer src="/scripts/alpine.min.js"></script>
+    <script src="/scripts/cart.js"></script>
+    <title>Magic Galore - Cart</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/user/products/2">Packs</a>
+            <a href="/user/products/1">Singles</a>
+            <a href="/user/cart/1">Cart</a>
+            <a href="/user/login">Login</a>
+        </div>
+    </nav>
+    <main>
+        <% if (cartList.length > 0) {%>
+            <form action="/user/checkout/<%=cartList[0].cart_id%>" method="POST">
+                <section x-data="cart" class="items-container">   
+                    <table>
+                        <%cartList.forEach((product) => {%>
+                            <tr>
+                                <td class="delete"><a href="/user/remove-product/<%=product.product_id%>"><img src="/assets/delete.png" alt="Delete"></a></td>
+                                <td class="qty"><input type="number" min="1" value="<%=product.qty%>" name="qty">x</td>
+                                <td class="card"><img src="<%=product.image_url%>" alt="Card"></td>
+                                <td class="name"><%=product.name%></td>
+                                <td class="price">$<%=(product.price / 100).toFixed(2)%></td>
+                            </tr>
+                        <%})%>
+                    </table>
+                </section>
+                <section class="checkout-container">
+                    <div>
+                        <h1>Total:</h1>
+                        <h1 class="total">$<%=(cartList.reduce((sum, product) => sum += product.price, 0) / 100).toFixed(2)%></h1>
+                    </div>
+                    <button type="submit">Checkout</button>
+                </section>
+            </form>
+        <%}%>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

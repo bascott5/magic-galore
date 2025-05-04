@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ORIGINAL CODE STARTS HERE */
+
+body {
+    background-color: #323232;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, footer, input, div, img {
+    font-family: sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.logo {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 13px 60px;
+    z-index: 2;
+    color: white;
+}
+
+nav {
+    background-color: #1f1e1c;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav > div {
+    display: inline-flex;
+    float: right;
+    width: 35%;
+    height: 100%;
+    margin: 0 50px;
+    justify-content: end;
+    align-items: center;
+}
+
+nav > div > a {
+    border-radius: 10px;
+    margin: 0 25px;
+    color: white;
+    font-weight: bold;
+}
+
+nav > div > a:hover {
+    color: orangered;
+}
+
+main {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+main > h1 {
+    font-size: 4vw;
+    color: white;
+    font-weight: bold;
+}
+
+#login {
+    width: 50%;
+    background-color: black;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+#login {
+    color: white;
+}
+
+#username, #password {
+    padding: 0;
+    margin: 15px 0;
+    width: 100%;
+}
+
+#username > p, #password > p {
+    margin: 10px 0;
+}
+
+#username > input, #password > input {
+    user-select: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    font-size: 1vw;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+#login > button {
+    background-color: orangered;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5vh;
+    font-weight: bold;
+    width: 100%;
+}
+
+#login > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+#login > p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#login > p > a {
+    color: orangered;
+    text-decoration: underline;
+}
+
+#login > p > a:hover {
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 2px solid white;
+    background-color: black;
+    padding: 25px;
+    text-align: center;
+    color: white;
+}

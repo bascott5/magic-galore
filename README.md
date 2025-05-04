@@ -1,0 +1,2 @@
+# Magic Galore
+Magic Galore is a mock ecommerce platform for buying Magic: The Gathering cards. Users can "purchase" cards by adding them to their cart and clicking checkout to get rid of all items inside it. In addition, it has the full functionality of a CRUD application, allowing the admin to create products, view products, edit products, and delete products. You can run the app by using the `node app.js` command.

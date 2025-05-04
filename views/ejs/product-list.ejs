@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/product-list.css">
+    <script src="/scripts/alpine.min.js"></script>
+    <title>Magic Galore - Products</title>
+</head>
+<body>
+    <header class="showcase-container">
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <h1>Magic Galore</h1>
+        <h2>Your one-stop shop for Magic: The Gathering cards!</h2>
+    </header>
+    <nav>
+        <div>
+            <a href="/user/products/2">Packs</a>
+            <a href="/user/products/1">Singles</a>
+            <a href="/user/cart/1">Cart</a>
+            <a href="/user/login">Login</a>
+        </div>
+    </nav>
+    <main>
+        <%if (cards.length > 0) {%>
+            <section class="content-container">
+                    <% cards.forEach((card) => { %>
+                        <a class="item" href="/user/product/<%= card.product_id %>">
+                            <img src="<%= card.image_url %>" alt="card">
+                            <div>
+                                <h1><%= card.name %></h1>
+                                <p>$<%= (card.price / 100).toFixed(2) %></p>
+                            </div>
+                        </a>
+                    <%}) %>
+            </section>
+        <%} else {%>
+            <p>No cards match the search query!</p>
+        <%}%>
+        <form class="filter-container" action="/user/products/1" method="GET">
+            <div>
+                <h2>Search</h2>
+                <input type="text" name="search">
+            </div>
+            <div>
+                <h2>Set</h2>
+                <select name="set">
+                    <option selected value="">Select</option>
+                    <option value="BLB">BLB</option>
+                    <option value="CMM">CMM</option>
+                    <option value="DFT">DFT</option>
+                    <option value="DSC">DSC</option>
+                    <option value="DSK">DSK</option>
+                    <option value="FDN">FDN</option>
+                    <option value="M19">M19</option>
+                    <option value="SLD">SLD</option>
+                    <option value="TDC">TDC</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

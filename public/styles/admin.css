@@ -1,0 +1,385 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ORIGINAL CODE STARTS HERE */
+
+body {
+    background-color: #323232;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, footer, input, div, td, img, label, th, tr {
+    font-family: sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.showcase-container {
+    display: flex;
+    background: url("../assets/magic-banner.png");
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.showcase-container > h1 {
+    font-weight: bold;
+    font-size: 6vh;
+}
+
+.logo {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 13px 60px;
+    z-index: 2;
+    color: white;
+}
+
+nav {
+    background-color: #1f1e1c;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav > div {
+    display: inline-flex;
+    float: right;
+    width: 35%;
+    height: 100%;
+    margin: 0 50px;
+    justify-content: end;
+    align-items: center;
+}
+
+nav > div > a {
+    border-radius: 10px;
+    margin: 0 25px;
+    color: white;
+    font-weight: bold;
+}
+
+nav > div > a:hover {
+    color: orangered;
+}
+
+.admin-products {
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 90%;
+}
+
+.admin-products > form > button {
+    float: right;
+    background-color: orangered;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid orangered;
+    border-radius: 5px;
+}
+
+.admin-products > form > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+.admin-products > form > button:active {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.admin-search-container > input {
+    background-color: black;
+    border: 2px solid white;
+    padding: 5px;
+    font-size: 1.5vh;
+    color: white;
+    box-sizing: border-box;
+}
+
+.admin-search-container > button {
+    padding: 10px;
+    background-color: orangered;
+    border: 2px solid orangered;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.admin-search-container > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+.admin-search-container > button:active {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.products-table {
+    width: 100%;
+    color: white;
+    background-color: #1f1e1c;
+    margin: 25px 0;
+    border: 2px solid white;
+}
+
+.products-table > tbody > tr:nth-child(odd) {
+    background-color: #0f0f0f;
+}
+
+.products-table > tbody > tr > th {
+    text-align: center;
+    font-weight: bold;
+    background-color: black;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.products-table > tbody > tr > td {
+    padding: 15px;
+    text-align: center;   
+}
+
+.products-table > tbody > tr > td > input {
+    all: unset;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+}
+
+.products-table > tbody > tr > td > input:nth-child(odd) {
+    background-color: #0f0f0f;
+}
+
+.products-table > tbody > tr > td > input:nth-child(even) {
+    background-color: #1f1e1c;
+}
+
+.products-table > tbody > tr > td > a > button {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    background-color: orangered;
+    padding: 10px;
+    border: 2px solid orangered;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.5vh;
+}
+
+.products-table > tbody > tr > td > a > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+.products-table > tbody > tr > td > a > button:active {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.admin-edit {
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 90%;
+    color: white;
+}
+
+.admin-edit > form {
+    margin: 0 auto;
+    width: 35%;
+}
+
+.admin-edit > form > div {
+    margin: 20px 0;
+}
+
+.admin-edit > form > div > p {
+    margin: 10px 0;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.admin-edit > form > div > input {
+    width: 100%;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.5vh;
+    color: white;
+    box-sizing: border-box;
+}
+
+.admin-edit > form > button {
+    float: right;
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vh;
+    background-color: orangered;
+    border-radius: 10px;
+    border: 2px solid orangered;
+}
+
+.admin-edit > form > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+.admin-edit > form > button:active {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.admin-upload {
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
+}
+
+.admin-upload > form {
+    width: 100%;
+    height: 100%;
+}
+
+.file-upload {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    background-color: #323232;
+}
+
+.file-upload:hover {
+    background-color: #1f1e1c;
+}
+
+.file-upload > label {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload > input {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: absolute;
+}
+
+.json-container {
+    margin: 15px auto;
+    color: white;
+    width: 25%;
+    background-color: #1f1e1c;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 2vh;
+}
+
+.upload-submit {
+    background-color: orangered;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin: 25px 0;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+footer {
+    border-top: 2px solid white;
+    background-color: black;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}

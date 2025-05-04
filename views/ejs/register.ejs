@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/register.css">
+    <script src="/scripts/alpine.min.js"></script>
+    <title>MagicGalore - Register</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/user/products/2">Packs</a>
+            <a href="/user/products/1">Singles</a>
+            <a href="/user/cart/1">Cart</a>
+            <a href="/user/login">Login</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Magic Galore</h1>
+        <form id="login" action="/user/register" method="POST">
+            <div id="email">
+                <p>Email</p>
+                <input type="text" name="email">
+            </div>
+            <div id="username">
+                <p>Username</p>
+                <input type="text" name="username">
+            </div>
+            <div id="password">
+                <p>Password</p>
+                <input type="text" name="password">
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="/user/login">Login here.</a></p>
+        </form>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

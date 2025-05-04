@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <script defer src="/scripts/alpine.min.js"></script>
+    <title>Magic Galore - Admin Edit</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/admin/list-products">Products</a>
+            <a href="/admin/upload-products">Upload</a>
+            <a href="/">Logout</a>
+        </div>
+    </nav>
+    <main class="admin-edit">
+        <form action="/admin/edit-product/<%= product.product_id %>" method="POST">
+            <div>
+                <p>Category ID</p>
+                <input name="categoryId" type="text" value="<%= product.category_id %>">
+            </div>
+            <div>
+                <p>Name</p>
+                <input name="name" type="text" value="<%= product.name %>">
+            </div>
+            <div>
+                <p>Description</p>
+                <input name="description" type="text" value="<%= product.description %>">
+            </div>
+            <div>
+                <p>Set</p>
+                <input name="set" type="text" value="<%= product.set_name %>">
+            </div>
+            <div>
+                <p>Image Path</p>
+                <input name="imageUrl" type="text" value="<%= product.image_url %>">
+            </div>
+            <div>
+                <p>Price</p>
+                <input name="price" type="text" value="<%= product.price %>">
+            </div>
+            <div>
+                <p>Qty</p>
+                <input name="qty" type="text" value="<%= product.qty %>">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <script defer src="/scripts/alpine.min.js"></script>
+    <script src="/scripts/admin.js"></script>
+    <title>Magic Galore - Admin Products</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/admin/list-products">Products</a>
+            <a href="/admin/upload-products">Upload</a>
+            <a href="/">Logout</a>
+        </div>
+    </nav>
+    <main class="admin-products">
+        <form action="/admin/insert-product" method="POST" x-data="products">
+            <table class="products-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Category ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Set</th>
+                    <th>Image Path</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <% products.forEach((product) => {%>
+                    <tr>
+                        <td><%= product.product_id %></td>
+                        <td><%= product.category_id %></td>
+                        <td><%= product.name %></td>
+                        <td><%= product.description %></td>
+                        <td><%= product.set_name %></td>
+                        <td><%= product.image_url %></td>
+                        <td>$<%= (product.price / 100).toFixed(2) %></td>
+                        <td><%= product.qty %></td>
+                        <td><a href="/admin/edit-product/<%= product.product_id %>"><button type="button">Edit</button></a></td>
+                        <td><a href="/admin/delete-product/<%= product.product_id %>"><button type="button">Delete</button></a></td>
+                    </tr>
+                <%})%>
+                <tr>
+                    <td></td>
+                    <td><input name="categoryId" type="text"></td>
+                    <td><input name="name" type="text"></td>
+                    <td><input name="description" type="text"></td>
+                    <td><input name="set" type="text"></td>
+                    <td><input name="imageUrl" type="text"></td>
+                    <td><input name="price" type="text"></td>
+                    <td><input name="qty" type="text"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button x-bind="addRow" type="submit">+Add Item</button>
+        </form>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>

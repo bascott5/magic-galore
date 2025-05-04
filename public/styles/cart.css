@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ORIGINAL CODE STARTS HERE */
+
+body {
+    background-color: #323232;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, footer, input, div, td, img {
+    font-family: sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.logo {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 13px 60px;
+    z-index: 2;
+    color: white;
+}
+
+nav {
+    background-color: #1f1e1c;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav > div {
+    display: inline-flex;
+    float: right;
+    width: 35%;
+    height: 100%;
+    margin: 0 50px;
+    justify-content: end;
+    align-items: center;
+}
+
+nav > div > a {
+    border-radius: 10px;
+    margin: 0 25px;
+    color: white;
+    font-weight: bold;
+}
+
+nav > div > a:hover {
+    color: orangered;
+}
+
+main {
+    margin: 64px 0;
+    height: 72vh;
+}
+
+main > form {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.items-container, .checkout-container {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 15px;
+}
+
+.items-container {
+    width: 50%;
+    padding: 0 25px;
+    overflow-y: scroll;
+    height: 95%;
+}
+
+.items-container > table {
+    width: 100%;
+}
+
+.items-container > table > tbody > tr {
+    border-bottom: 2px solid white;
+}
+
+.items-container > table > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+.items-container > table > tbody > tr > td {
+    vertical-align: middle;
+    padding: 10px;
+    display: inline-block;
+    margin: 25px 0;
+}
+
+.qty > input {
+    color: white;
+    display: inline-block;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 5vh;
+}
+
+.card > img {
+    width: 5vh;
+    border-radius: 5px;
+}
+
+.name, .price {
+    font-size: 1.75vh;
+    font-weight: bold;
+}
+
+.delete {
+    color: white;
+}
+
+.delete > a > img {
+    max-width: 3vh;
+}
+
+.checkout-container {
+    width: 25%;
+}
+
+.checkout-container > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-container > div > h1 {
+    font-weight: bold;
+    font-size: 4vh;
+    margin-bottom: 25px;
+}
+
+.checkout-container > button {
+    background-color: orangered;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    color: white;
+    font-size: 2vh;
+    font-weight: bold;
+    width: 100%;
+}
+
+.checkout-container > button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: orangered;
+}
+
+.checkout-container > button:active {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 2px solid white;
+    background-color: black;
+    padding: 25px;
+    text-align: center;
+    color: white;
+}

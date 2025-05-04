@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/product-details.css">
+    <script defer src="scripts/alpine.min.js"></script>
+    <title>Magic Galore - Breakthrough</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"></a>
+        <div>
+            <a href="/user/products/2">Packs</a>
+            <a href="/user/products/1">Singles</a>
+            <a href="/user/cart/1">Cart</a>
+            <a href="/user/login">Login</a>
+        </div>
+    </nav>
+    <main>
+        <img class="product-img" src="<%=product.image_url%>" alt="product">
+        <form class="details-container" action="/user/add-product/1/<%=product.product_id%>" method="POST">
+            <input type="hidden" name="qty" value="1">
+            <h1 class="product-title"><%= product.name %></h1>
+            <div>
+                <h2 class="product-qty">Qty: <%= product.qty %></h2>
+                <h2 class="product-price">$<%= (product.price / 100).toFixed(2) %></h2>
+            </div>
+            <p class="product-description"><%= product.description %></p>
+            <button class="purchase" type="submit">+Add to Cart</button>
+        </form>
+    </main>
+    <footer>
+        &#169; 2025 Magic Galore
+    </footer>
+</body>
+</html>
