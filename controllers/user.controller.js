@@ -153,31 +153,33 @@ function addProductToCart(req, res, next) {
 function removeProductFromCart(req, res, next) {
     const productId = req.params.id;
 
-    try {
-        model.removeProductFromCart(productId);
-        model.increaseQty(productId);
-        res.redirect("/user/cart/1");
-    } catch (err) {
-        console.error(err.message);
-        next(err);
+    if (productId) {
+        try {
+            model.removeProductFromCart(productId);
+            model.increaseQty(productId);
+            res.redirect("/user/cart/1");
+        } catch (err) {
+            console.error(err.message);
+            next(err);
+        }
+    } else {
+        res.status(400).send("invalid Request");
     }
 }
 
 function checkout(req, res, next) {
     const id = req.params.id
-    const qty = req.body.qty;
-    const params = [
-        qty,
-        id
-    ];
 
-    try {
-        model.updateQty(params);
-        model.checkout(id);
-        res.redirect("/user/all-products");
-    } catch (err) {
-        console.error(err.message);
-        next(err);
+    if (id) {
+        try {
+            model.checkout(id);
+            res.redirect("/user/all-products");
+        } catch (err) {
+            console.error(err.message);
+            next(err);
+        }
+    } else {
+        res.status(400).send("invalid Request");
     }
 }
 

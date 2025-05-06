@@ -69,7 +69,7 @@ function increaseQty(productId) {
 
 function updateQty(params) {
     const sql = "UPDATE cart_products SET qty = ? WHERE cart_product_id = ?";
-    const info = db.run(sql, params);
+    const info = db.run(sql, params[0], params[1]);
     return info;
 }
 
@@ -79,9 +79,9 @@ function removeProductFromCart(id) {
     return info;
 }
 
-function checkout(params) {
+function checkout(id) {
     const sql = "DELETE FROM cart_products WHERE cart_id = ?;";
-    const info = db.run(sql, params);
+    const info = db.run(sql, id);
     return info;
 }
 

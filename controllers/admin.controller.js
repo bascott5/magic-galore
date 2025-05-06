@@ -122,7 +122,8 @@ function bulkUploadProduct(req, res, next) {
 
     if (uploads) {
         try {
-            res.json(model.bulkUploadProduct(uploads));
+            model.bulkUploadProduct(uploads);
+            res.redirect("/admin/list-products");
         } catch (err) {
             console.error(err.message);
             next(err);
